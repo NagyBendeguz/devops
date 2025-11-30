@@ -1,0 +1,23 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color Hex</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (color of service.colors | async; track $index) {
+            <tr>
+                <td>{{ color.name }}</td>
+                <td>{{ color.colorHex }}</td>
+                <td><span [style.background-color]="color.colorHex"></span></td>
+            </tr>
+        }
+        </tbody>
+        
+    </table>
+</div>
+
+<app-create></app-create>
