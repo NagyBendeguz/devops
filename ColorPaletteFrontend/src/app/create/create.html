@@ -1,12 +1,12 @@
-<div>
+<div class="container">
     <div>
-        <label for="name">Name</label>
+        <label for="name" class="form-label mb-3 pe-3">Name: </label>
         <input type="text" name="name" id="name" [(ngModel)]="newColor.name">
         <br>
-        <label for="color">Color</label>
+        <label for="color" class="form-label mb-3 pe-3">Color: </label>
         <input type="color" name="color" id="color" [(ngModel)]="newColor.colorHex">
     </div>
     <div>
-        <button (click)="create()">Create</button>
+        <button (click)="create()" class="btn btn-primary">Create</button>
     </div>
 </div>
