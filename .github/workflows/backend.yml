@@ -112,7 +112,6 @@ jobs:
               exit 1
             fi
 
-
             # (Opcionális) tulajdonos állítás
             if [ -n "${{ secrets.REMOTE_OWNER || '' }}" ]; then
               sudo chown -R "${{ secrets.REMOTE_OWNER }}" "$BASE"
