@@ -16,11 +16,11 @@ export class ColorService {
   }
   
   getColors() {
-    this.colors = this.http.get<Color[]>(environment.apis.getColors)
+    this.colors = this.http.get<Color[]>(environment.backendUrl + "/api/Color")
   }
 
   createColor(color: ColorCreateDto) {
-    return this.http.post<Color>(environment.apis.createColor, color).pipe(
+    return this.http.post<Color>(environment.backendUrl + "/api/Color", color).pipe(
       tap(c => {
         this.getColors()
       })
