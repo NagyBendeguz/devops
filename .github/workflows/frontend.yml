@@ -10,7 +10,7 @@ jobs:
 
     env:
       APP_DIR: ColorPaletteFrontend
-      DIST_DIR: ColorPaletteFrontend/dist/color-palette-frontend/browser
+      DIST_DIR: ColorPaletteFrontend/dist/ColorPaletteFrontend/browser
       REMOTE_BASE: /var/frontend
       REMOTE_RELEASES: /var/frontend/releases
       REMOTE_CURRENT: /var/frontend/current
