@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ColorPaletteBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ColorController : ControllerBase
     {
         ColorDbContext ctx;

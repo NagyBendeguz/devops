@@ -12,15 +12,15 @@ export class ColorService {
   colors: Observable<Color[]> = new Observable<Color[]>
 
   constructor(private http: HttpClient) {
-    this.getColors();
+    this.getColors()
   }
   
   getColors() {
-    this.colors = this.http.get<Color[]>(environment.backendUrl + "/api/Color")
+    this.colors = this.http.get<Color[]>(environment.backendUrl + "/Color")
   }
 
   createColor(color: ColorCreateDto) {
-    return this.http.post<Color>(environment.backendUrl + "/api/Color", color).pipe(
+    return this.http.post<Color>(environment.backendUrl + "/Color", color).pipe(
       tap(c => {
         this.getColors()
       })
