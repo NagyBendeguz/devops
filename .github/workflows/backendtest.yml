@@ -19,7 +19,7 @@ jobs:
       REMOTE_BASE: /var/backendtest                   # gyökér a deployed appnak
       REMOTE_RELEASES: /var/backendtest/releases      # ide mennek a verziók
       REMOTE_CURRENT: /var/backendtest/current        # symlink az aktuális release-re
-      SERVICE_NAME: colorpalettebackend
+      SERVICE_NAME: colorpalettebackendtest
       FRONTEND_URL: https://test.colorpalette.medea.hu
       SSH_HOST: test.colorpalette.medea.hu
       SSH_USER: root
