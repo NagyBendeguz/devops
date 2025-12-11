@@ -24,7 +24,7 @@ jobs:
       SSH_HOST: test.colorpalette.medea.hu
       SSH_USER: root
       # --- SECRET-ek (Repo Settings → Secrets and variables → Actions) ---
-      # SSH_KEY, SSH_PASS, DB_CONN
+      # SSH_KEY, SSH_PASS, CONN_DB_TEST
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -102,9 +102,10 @@ jobs:
             # appsettings.json módosítása (db:conn + settings:frontend -> secretből)
             if command -v jq >/dev/null; then
               sudo jq \
-                --arg conn "${{ secrets.DB_CONN_TEST }}" \
+                --arg conn "${{ secrets.CONN_DB_TEST }}" \
                 --arg frontend "${{ env.FRONTEND_URL }}" \
-                '.db.conn = $conn | .settings.frontend = $frontend' \
+                --arg port "${{ secrets.TEST_PORT }}" \
+                '.db.conn = $conn | .settings.frontend = $frontend | .settings.port = $port' \
                 "$NEW_RELEASE/appsettings.json" | sudo tee "$NEW_RELEASE/appsettings.json.tmp" > /dev/null
               sudo mv "$NEW_RELEASE/appsettings.json.tmp" "$NEW_RELEASE/appsettings.json"
             else
