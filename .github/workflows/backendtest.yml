@@ -24,7 +24,7 @@ jobs:
       SSH_HOST: test.colorpalette.medea.hu
       SSH_USER: root
       # --- SECRET-ek (Repo Settings → Secrets and variables → Actions) ---
-      # SSH_KEY, SSH_PASS, DB_CONN
+      # SSH_KEY, SSH_PASS, DB_CONN_TEST
     steps:
       - name: Checkout
         uses: actions/checkout@v4
