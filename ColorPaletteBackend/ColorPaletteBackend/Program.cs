@@ -62,10 +62,11 @@ namespace ColorPaletteBackend
                 .AllowAnyMethod());
             //
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+
+            app.UseCors("AllowAll");
 
             //app.UseAuthorization();
-
 
             app.MapControllers();
 
